@@ -5,6 +5,8 @@ steps:
       - 'build'
       - '-t'
       - 'northamerica-northeast2-docker.pkg.dev/gcp-class-16/aman-bank-repo/bank-backend'
+      - '--build-arg' 
+      - 'REACT_APP_API_URL=https://aman-bank-backend-79505229087.northamerica-northeast2.run.app'
       - '.'
     dir: 'bank-backend'
 

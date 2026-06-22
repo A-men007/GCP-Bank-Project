@@ -4,7 +4,7 @@ steps:
     args:
       - 'build'
       - '-t'
-      - 'northamerica-northeast2-docker.pkg.dev/gcp-class-16/aman-bank-repo/bank-backend:$SHORT_SHA'
+      - 'northamerica-northeast2-docker.pkg.dev/gcp-class-16/aman-bank-repo/bank-backend'
       - '.'
     dir: 'bank-backend'
 
@@ -12,7 +12,7 @@ steps:
     id: Push
     args:
       - 'push'
-      - 'northamerica-northeast2-docker.pkg.dev/gcp-class-16/aman-bank-repo/bank-backend:$SHORT_SHA'
+      - 'northamerica-northeast2-docker.pkg.dev/gcp-class-16/aman-bank-repo/bank-backend'
 
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     id: Deploy
@@ -21,7 +21,7 @@ steps:
       - run
       - deploy
       - aman-bank-backend
-      - --image=northamerica-northeast2-docker.pkg.dev/gcp-class-16/aman-bank-repo/bank-backend:$SHORT_SHA
+      - --image=northamerica-northeast2-docker.pkg.dev/gcp-class-16/aman-bank-repo/bank-backend
       - --region=northamerica-northeast2
       - --platform=managed
       - --allow-unauthenticated
